@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="FUPA 30/14" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.1"/>
+  </Asset>
+
+  <Files>
+    <File fileId="5" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="8" filename="$data/shared/detailArray_diffuse.png"/>
+    <File fileId="7" filename="$data/shared/detailArray_normal.png"/>
+    <File fileId="6" filename="$data/shared/detailArray_specular.png"/>
+    <File fileId="3" filename="texture/PackerRabe_normal.png"/>
+    <File fileId="4" filename="texture/PackerRabe_specular.png"/>
+    <File fileId="9" filename="texture/RabeFUPA_Decals_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert1" materialId="4" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="mat_01" materialId="5" diffuseColor="0.8 0.8 0.8 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.084 0.238 0.617 0"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="Material.001" materialId="6">
+      <Texture fileId="9"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Packer.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="rabeFUPA3014" translation="0 0 -0.258726" dynamic="true" compound="true" clipDistance="300" nodeId="20" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true" distanceBlending="false">
+        <TransformGroup name="attacher" translation="0 0 0.258726" nodeId="21">
+          <TransformGroup name="attacherJoint" translation="0 0.638948 -0.927312" rotation="-0 -90 0" nodeId="22"/>
+          <TransformGroup name="topReferencePoint" translation="0 1.28337 -0.921482" rotation="-0 -90 0" nodeId="23"/>
+        </TransformGroup>
+        <TransformGroup name="workAreas" translation="0 -0.058 0.258726" nodeId="24">
+          <TransformGroup name="workAreaStart" translation="1.5 0 0.177" nodeId="25"/>
+          <TransformGroup name="workAreaWidth" translation="-1.5 0 0.177" nodeId="26"/>
+          <TransformGroup name="workAreaHeight" translation="1.5 0 -0.25" nodeId="27"/>
+        </TransformGroup>
+        <TransformGroup name="ai" translation="0 0 0.258726" nodeId="28">
+          <TransformGroup name="aiMarkers" nodeId="29">
+            <TransformGroup name="aiMarkerLeft" translation="1.5 -0.0580328 0.762446" nodeId="30"/>
+            <TransformGroup name="aiMarkerRight" translation="-1.5 -0.0580328 0.762" nodeId="31"/>
+            <TransformGroup name="aiMarkerBack" translation="0 -0.0580328 -0.25" nodeId="32"/>
+          </TransformGroup>
+          <TransformGroup name="aiSize" nodeId="33">
+            <TransformGroup name="aiMarkerLeft1" translation="1.5 -0.058 1" nodeId="34"/>
+            <TransformGroup name="aiMarkerRight1" translation="-1.5 -0.0580328 1" nodeId="35"/>
+            <TransformGroup name="aiMarkerBack1" translation="0 -0.058 -0.4" nodeId="36"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="effect" translation="0 0 0.258726" nodeId="37">
+          <TransformGroup name="soilEffect" translation="-5.32907e-17 -7.10543e-17 0.0524291" scale="1 1 0.790303" nodeId="38">
+            <Shape shapeId="2" name="soilEmitShape1" translation="5.32907e-17 -0.152234 0" clipDistance="100" nodeId="39" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="3" name="dustEmitterShape1" translation="5.32907e-17 7.10543e-17 0" clipDistance="100" nodeId="40" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="2" name="soilEmitShape1" translation="5.32907e-17 -0.267911 0.0034266" clipDistance="100" nodeId="41" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </TransformGroup>
+          <TransformGroup name="soilEffect" translation="-5.32907e-17 -7.10543e-17 1.07193" scale="1 1 0.691927" nodeId="42">
+            <Shape shapeId="2" name="soilEmitShape" translation="5.32907e-17 -0.152234 0" clipDistance="100" nodeId="43" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="3" name="dustEmitterShape" translation="5.32907e-17 7.10543e-17 0" clipDistance="100" nodeId="44" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="2" name="soilEmitShape" translation="5.32907e-17 -0.267911 0.0034266" clipDistance="100" nodeId="45" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </TransformGroup>
+          <TransformGroup name="depthNode" translation="-5.32907e-17 -0.1 0" nodeId="46"/>
+        </TransformGroup>
+        <TransformGroup name="vis" translation="0 0 0.258726" nodeId="47">
+          <Shape shapeId="4" name="Frontfederzinken" translation="-7.10543e-14 2.83122e-06 -1.43051e-06" nodeId="48" materialIds="5" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="5" name="Dcals_Frontfedern" translation="7.10543e-14 -3.54648e-06 2.26498e-06" scale="0.01 0.01 0.01" nodeId="49" materialIds="6"/>
+          </Shape>
+          <Shape shapeId="6" name="Rahmen1" translation="0 3.99351e-06 6.85453e-07" nodeId="50" materialIds="5" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="7" name="Decals_decals_Vis" translation="0 -3.99351e-06 -6.85453e-07" scale="0.01 0.01 0.01" nodeId="51" materialIds="6"/>
+          </Shape>
+          <Shape shapeId="8" name="Walze" translation="-0.000129855 0.446751 -0.195221" rotation="90 -0 0" nodeId="52" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <TransformGroup name="Support" translation="0 0 0.258726" nodeId="53">
+          <Shape shapeId="9" name="Stuze_1" translation="-1.78814e-06 -7.45058e-07 1.19209e-07" nodeId="54" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="10" name="Stuze_2" nodeId="55" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="11" name="Splint_stuze_1" translation="-2.44379e-06 -1.16229e-06 -1.90735e-06" nodeId="56" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="12" name="Splint_stuze_2" translation="8.9407e-07 -1.16229e-06 6.85453e-07" nodeId="57" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+      </Shape>
+  </Scene>
+
+</i3D>

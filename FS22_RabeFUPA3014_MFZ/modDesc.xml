@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="61">
+    <author>MFZ_modding</author>
+    <version>1.0.0.1</version>
+    <title>
+        <en>Rabe FUPA 30/14</en>
+        <de>Rabe FUPA 30/14</de>
+    </title>
+    <description>
+        <en><![CDATA[Price: 4250 €
+Workingwidth: 3m
+Maintenance: 5 € / day]]></en>
+        <de><![CDATA[Preis: 4250 €
+Arbeitsbreite: 3m
+Unterhaltskosten: 5 € / Tag]]></de>
+        <fr><![CDATA[Price: 4250 €
+Workingwidth: 3m
+Maintenance: 5 € / day]]></fr>
+    </description>
+    <iconFilename>icon_RabeFUPA3014.dds</iconFilename>
+    <multiplayer supported="true"/>
+    <storeItems>
+        <storeItem xmlFilename="rabeFUPA3014.xml"/>
+    </storeItems>
+</modDesc>

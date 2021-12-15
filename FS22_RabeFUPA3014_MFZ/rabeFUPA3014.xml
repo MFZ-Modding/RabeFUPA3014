@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="cultivator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs22/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <storeData>
+        <name>
+            <de>FUPA 30/14</de>
+            <en>FUPA 30/14</en></name>
+        <specs>
+            <neededPower>85</neededPower>
+            <workingWidth>3.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_cultivator</function>
+        </functions>
+        <image>store_RabeFUPA3014.dds</image>
+        <price>5250</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>RABE</brand>
+        <category>cultivators</category>
+        <vertexBufferMemoryUsage>551872</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>76812</indexBufferMemoryUsage>
+        <textureMemoryUsage>9983584</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+    <base>
+        <typeDesc>$l10n_typeDesc_cultivator</typeDesc>
+        <filename>Packer.i3d</filename>
+        <size width="3.5" length="3"/>
+        <components>
+            <component centerOfMass="0.0 0.2 -0.46" solverIterationCount="15" mass="870"/>
+        </components>
+        <schemaOverlay name="IMPLEMENT" attacherJointPosition="0 0"/>
+        <speedLimit value="17"/>
+    </base>
+    <speedRotatingParts>
+        <speedRotatingPart node="0>4|2" radius="0.45" groundReferenceNodeIndex="1"/>
+    </speedRotatingParts>
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="0>0|0" jointType="implement" topReferenceNode="0>0|1">
+                <distanceToGround lower="0.59" upper="1.8"/>
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+        <support animationName="moveSupport"/>
+    </attachable>
+    <powerConsumer forceNode="0>" maxForce="2" neededMaxPtoPower="0"/>
+    <groundReferenceNodes>
+        <groundReferenceNode node="0>" threshold="0.1" depthNode="0>3|2"/>
+    </groundReferenceNodes>
+    <workAreas>
+        <workArea functionName="processCultivatorArea" type="cultivator">
+            <area heightNode="0>1|2" startNode="0>1|0" widthNode="0>1|1"/>
+            <groundReferenceNode index="1"/>
+        </workArea>
+    </workAreas>
+    <workParticles>
+        <particle>
+            <node node="0>3|0|0" refNodeIndex="1" particleType="SOIL"/>
+            <node node="0>3|0|1" refNodeIndex="1" particleType="SOIL_SMOKE"/>
+            <node node="0>3|0|2" refNodeIndex="1" particleType="SOIL_CHUNKS" worldSpace="false"/>
+        </particle>
+    </workParticles>
+    <animations>
+        <animation name="moveSupport">
+            <part endTime="0.5" endTrans="0 0 0" node="0>5|0" startTime="0" startTrans="0 0.45 0"/>
+            <part endTime="0.5" endTrans="0 0 0" node="0>5|1" startTime="0" startTrans="0 0.45 0"/>
+            <part endTime="0.0" endTrans="0 0 0" node="0>5|2" startTime="0" startTrans="0 0.144 0"/>
+            <part endTime="0.0" endTrans="0 0 0" node="0>5|3" startTime="0" startTrans="0 0.144 0"/>
+        </animation>
+    </animations>
+    <cultivator>
+        <directionNode node="0>"/>
+        <onlyActiveWhenLowered value="true"/>
+        <sounds>
+            <work linkNode="0>" template="DEFAULT_CULTIVATOR_WORK"/>
+        </sounds>
+    </cultivator>
+    <designConfigurations>
+        <designConfiguration name="Standart" price="0">
+            <objectChange node="0>4|0" visibilityActive="false"/>
+        </designConfiguration>
+        <designConfiguration name="Mit" price="0">
+            <objectChange node="0>4|0" visibilityActive="true"/>
+        </designConfiguration>
+    </designConfigurations>
+    <washable dirtDuration="30" washDuration="1" workMultiplier="20"/>
+    <ai>
+        <areaMarkers leftNode="0>2|0|0" rightNode="0>2|0|1" backNode="0>2|0|2"/>
+        <needsLowering value="true"/>
+        <sizeMarkers backNode="0>2|1|2" leftNode="0>2|1|0" rightNode="0>2|1|1"/>
+    </ai>
+    <!--Non converted elements, might require manual conversion or are obsolete:
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle>
+    <base>
+        <components>
+			0.0 0.2 -0.46
+                </components>
+    </base>
+</vehicle>
+-->
+</vehicle>
